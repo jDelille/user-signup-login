@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import './Auth.scss';
 
@@ -10,11 +10,20 @@ const Login = ({ setUser }) => {
 
  let navigate = useNavigate();
 
+ // get the users from local storage & parse the data
  let getUsers = localStorage.getItem('users')
  let users = JSON.parse(getUsers)
 
+ // clear error when input fields are empty
+ useEffect(() => {
+  if (email.length === 0 || password.length === 0) {
+   setError(null)
+  }
+ }, [email, password])
+
  const login = (e) => {
   e.preventDefault();
+  // loop through users to find match
   users.forEach(user => {
    if (email === user.email && password === user.password) {
     setUser(user)
