@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import './Home.scss';
 
 const Home = ({ setUser, user }) => {
@@ -38,14 +38,21 @@ const Home = ({ setUser, user }) => {
     )}
 
     {!user && (
-     <h1>Invalid login data</h1>
+     <div className='links'>
+      <NavLink to='/login' className='btn'>Login</NavLink>
+      <NavLink to='/register' className='btn'>Register</NavLink>
+
+     </div>
     )}
    </div>
-   <div className="divider"></div>
-   <div className="logout">
-    <button onClick={logout}>Logout</button>
-   </div>
-
+   {user && (
+    <>
+     <div className="divider"></div>
+     <div className="logout">
+      <button onClick={logout}>Logout</button>
+     </div>
+    </>
+   )}
   </div >
  )
 }
