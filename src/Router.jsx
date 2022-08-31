@@ -25,7 +25,6 @@ const Router = () => {
       </>
      )}
      <Route path='/' element={<Home setUser={setUser} user={user} />} />
-
     </Routes>
    </BrowserRouter>
   </div>
