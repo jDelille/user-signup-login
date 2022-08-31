@@ -1,4 +1,3 @@
-### I used React router dom for the page routing and created a seperate page for the login and the register.
 
 ## Register
 - User can enter email and password to signup.
