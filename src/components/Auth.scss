@@ -1,0 +1,19 @@
+.login-page,
+.register-page {
+	background-color: dodgerblue;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
+	color: white;
+	padding-top: 4rem;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		margin: 0 auto;
+		gap: 1rem;
+		margin-top: 2rem;
+		max-width: 300px;
+	}
+}
